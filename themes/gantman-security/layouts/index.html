@@ -1,0 +1,89 @@
+{{ define "main" }}
+    {{ partial "hero.html" . }}
+    
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {{ partial "metrics.html" . }}
+        </div>
+    </section>
+    
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Latest Projects
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Real-world security implementations from my portfolio
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {{ range first 3 (where .Site.RegularPages "Section" "projects") }}
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">{{ .Title }}</h3>
+                        <p class="text-gray-600 mb-4">{{ .Description }}</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            {{ range .Params.technologies }}
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
+                                {{ . }}
+                            </span>
+                            {{ end }}
+                        </div>
+                        <a href="{{ .RelPermalink }}" class="text-teal-600 font-medium hover:text-blue-800">
+                            View case study →
+                        </a>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    From the Blog
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Technical insights and security best practices
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                {{ range first 2 (where .Site.RegularPages "Section" "blog") }}
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <time class="text-sm text-gray-500">{{ .Date.Format "January 2, 2006" }}</time>
+                            <span class="mx-2">•</span>
+                            <div class="flex flex-wrap gap-2">
+                                {{ range .Params.tags }}
+                                <span class="text-xs font-medium bg-gray-100 text-gray-800 px-2 py-1 rounded">
+                                    {{ . }}
+                                </span>
+                                {{ end }}
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">
+                            <a href="{{ .RelPermalink }}" class="hover:text-teal-600">{{ .Title }}</a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">{{ .Summary }}</p>
+                        <a href="{{ .RelPermalink }}" class="text-teal-600 font-medium hover:text-blue-800">
+                            Read more →
+                        </a>
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="/blog/" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-800 hover:bg-blue-900">
+                    View All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+{{ end }}

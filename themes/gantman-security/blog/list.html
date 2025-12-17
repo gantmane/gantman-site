@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h1 class="text-3xl font-bold text-gray-900 mb-6">Technical Blog</h1>
+    <p class="text-lg texgray-600 mb-8">Security insights and technical articles</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range .Paginator.Pages }}
+        <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="p-6">
+                <div class="flex items-center mb-3">
+                    <time class="text-sm text-gray-500">{{ .Date.Format "Jan 2, 2006" }}</time>
+                    <span class="mx-2">•</span>
+                    <div class="flex flex-wrap gap-1">
+                        {{ range first 2 .Params.tags }}
+                        <span class="text-xs font-medium bg-blue-100 text-blue-800 px-2 py-1 rounded">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                </div>
+                <h2 class="text-xl font-bold text-blue-900 mb-3">
+                    <a href="{{ .RelPermalink }}" class="hover:text-blue-700">{{ .Title }}</a>
+                </h2>
+                <plass="text-gray-600 mb-4">{{ .Summary | truncate 120 }}</p>
+                <a href="{{ .RelPermalink }}" class="text-blue-700 font-medium hover:text-blue-900">
+                    Read more →
+                </a>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+    
+    <!-- Pagination -->
+    {{ if gt .Paginator.TotalPages 1 }}
+    <div class="mt-12 flex justify-center">
+        {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}" class="mr-4 px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">
+            ← Previous
+        </a>
+        {{ end }}
+        
+        {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}" class="px-4 py-2 bg-blue-900 text-white rounded hover:bg-blue-800">
+            Next →
+        </a>
+        {{ end }}
+    </div>
+    {{ end }}
+</div>
+{{ end }}

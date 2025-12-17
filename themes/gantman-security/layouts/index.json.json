@@ -1,0 +1,20 @@
+{{- /* Home JSON output (index.json). Useful for search or integrations. */ -}}
+{{- $pages := where .Site.RegularPages "Section" "in" (slice "blog" "projects") -}}
+{{- $items := slice -}}
+{{- range $pages -}}
+  {{- $items = $items | append (dict
+    "title" .Title
+    "url" .Permalink
+    "section" .Section
+    "summary" (.Summary | plainify)
+    "date" (cond (not .Date.IsZero) (.Date.Format "2006-01-02") "")
+    "tags" (.Params.tags | default (slice))
+    "categories" (.Params.categories | default (slice))
+  ) -}}
+{{- end -}}
+{{- dict
+  "generatedAt" (now.UTC.Format "2006-01-02T15:04:05Z07:00")
+  "baseURL" .Site.BaseURL
+  "items" $items
+| jsonify -}}
+

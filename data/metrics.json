@@ -1,0 +1,29 @@
+{
+  "metrics": [
+    {
+      "icon": "✅",
+      "text": "PCI DSS Level 1 - Zero Audit Findings",
+      "description": "Achieved compliance with no findings"
+    },
+    {
+      "icon": "⚡",
+      "text": "99.95% Uptime - Payment Processing",
+      "description": "High availability for critical systems"
+    },
+    {
+      "icon": "📉",
+      "text": "85% Security Incident Reduction",
+      "description": "Through SIEM deployment and monitoring"
+    },
+    {
+      "icon": "💰",
+      "text": "45% AWS Cost Optimization",
+      "description": "FinOps practices implementation"
+    },
+    {
+      "icon": "🎯",
+      "text": "60% CDE Scope Reduction",
+      "description": "Via tokenization and segmentation"
+    }
+  ]
+}

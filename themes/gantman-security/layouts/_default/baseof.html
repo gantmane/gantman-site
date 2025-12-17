@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body class="bg-gray-50 font-sans">
+    {{ partial "header.html" . }}
+
+    <main class="min-h-screen">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    <script src="{{ "js/main.js" | relURL }}"></script>
+</body>
+</html>

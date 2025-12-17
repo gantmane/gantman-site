@@ -1,0 +1,19 @@
+{
+  "name": "gantman-security-portfolio",
+  "version": "1.0.0",
+  "description": "Security portfolio website for Evgeniy Gantman",
+  "scripts": {
+    "dev": "hugo server -D",
+    "build": "hugo --minify",
+    "clean": "rm -rf public resources",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": ["portfolio", "security", "hugo", "cloud", "devsecops"],
+  "author": "Evgeniy Gantman",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "postcss-cli": "^10.0.0"
+  }
+}

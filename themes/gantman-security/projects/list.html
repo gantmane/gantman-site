@@ -1,0 +1,63 @@
+{{ define "main" }}
+<div class="max-w-7xl mx-auto m:px-6 lg:px-8 py-16">
+    <h1 class="text-3xl font-bold text-gray-900 mb-6">Security Projects</h1>
+    <p class="text-lg text-gray-600 mb-8">Real-world security implementations and case studies</p>
+    
+    <div class="space-y-12">
+        {{ range .Pages }}
+        <article class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-blue-900 mb-2">{{ .Title }}</h2>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            {{ if .Params.client }}
+                            <span class="mr-4">Client: {{ .Params.client }}</span>
+                            {{ end }}
+                            {{ if .Params.duration }}
+                            <span>Duration: {{ .Params.duration }}</span>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ if .Params.team_size }}
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded">
+                        Team: {{ .Params.team_size }}
+                    </span>
+                    {{ end }}
+                </div>
+                
+                <p class="text-gray-700 mb-6">{{ .Description }}</p>
+                
+                {{ if .Params.technologies }}
+                <div class="mb-6">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-2">Technologies:</h3>
+                    <div class="flex flex-wrap gap-2">
+                        {{ range .Params.technologies }}
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
+                            {{ . }}
+                        </span>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+                
+                {{ if .Params.metrics }}
+                <div class="mb-8">
+                    <h3 class="text-sm font-semibold text-gray-900 mb-2">Results:</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        {{ range .Params.metrics }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+                
+                <a href="{{ .RelPermalink }}" class="inline-flex items-center text-blue-700 font-medium hover:text-blue-900">
+                    View detailed case study →
+                </a>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,25 @@
+<section class="relative bg-blue-900 overflow-hidden">
+    <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-blue-900 mix-blend-multiply"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            {{ .Site.Params.heroTitle }}
+        </h1>
+        <h2 class="mt-6 text-2xl text-orange-400 font-semibold">
+            {{ .Site.Params.heroSubtitle }}
+        </h2>
+        <p class="mt-6 max-w-3xl text-xl text-gray-300">
+            {{ .Site.Params.heroText }}
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="/journey/" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-blue-900 bg-white hover:bg-gray-100">
+                View My Security Journey
+            </a>
+            <a href="/projects/" class="inline-flex items-center px-6 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-blue-900">
+                Explore Key Projects
+            </a>
+        </div>
+    </div>
+</section>

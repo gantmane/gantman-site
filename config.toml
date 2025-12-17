@@ -1,0 +1,64 @@
+baseURL = "https://gantman.biz/"
+languageCode = "en-us"
+title = "Evgeniy Gantman - Senior Cloud Security Architect & DevSecOps Leader"
+theme = "gantman-security"
+
+[params]
+  author = "Evgeniy Gantman"
+  description = "15+ Years of Cloud Security, PCI DSS Compliance, and DevSecOps Expertise"
+  keywords = "PCI DSS, AWS Security, Kubernetes Security, DevSecOps, Cloud Security Architect"
+  
+  # Contact Information
+  whatsapp = "+972553189185"
+  telegram = "@tachys"
+  email = "egDevOps@gmail.com"
+  linkedin = "https://linkedin.com/in/evgeniy-gantman"
+  github = "https://github.com/gantmane"
+  
+  # Hero Section
+  heroTitle = "Evgeniy Gantman"
+  heroSubtitle = "Senior Cloud Security Architect & DevSecOps Leader"
+  heroText = "15+ Years | PCI DSS 4.0 Expert | AWS Security | Zero Trust Architecture"
+  
+  # Colors
+  primaryColor = "#1a365d"
+  secondaryColor = "#2c7a7b"
+  accentColor = "#d69e2e"
+  backgroundColor = "#f7fafc"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Journey"
+    url = "/journey/"
+    weight = 3
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 4
+  [[menu.main]]
+    name = "Skills"
+    url = "/skills/"
+    weight = 5
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 6
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 7
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
