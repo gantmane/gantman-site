@@ -141,7 +141,3 @@ MIT License - see LICENSE file for details.
 ## Author
 
 Evgeniy Gantman - [LinkedIn](https://linkedin.com/in/evgeniy-gantman) | [GitHub](https://github.com/gantmane)
-
----
-
-*Last Updated: March 2025*
