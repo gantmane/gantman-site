@@ -1,89 +1,868 @@
-{{ define "main" }}
-    {{ partial "hero.html" . }}
-    
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {{ partial "metrics.html" . }}
-        </div>
-    </section>
-    
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                    Latest Projects
-                </h2>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                    Real-world security implementations from my portfolio
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {{ range first 3 (where .Site.RegularPages "Section" "projects") }}
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-800 mb-2">{{ .Title }}</h3>
-                        <p class="text-gray-600 mb-4">{{ .Description }}</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            {{ range .Params.technologies }}
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
-                                {{ . }}
-                            </span>
-                            {{ end }}
-                        </div>
-                        <a href="{{ .RelPermalink }}" class="text-teal-600 font-medium hover:text-blue-800">
-                            View case study →
-                        </a>
-                    </div>
-                </div>
-                {{ end }}
-            </div>
-        </div>
-    </section>
-    
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                    From the Blog
-                </h2>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                    Technical insights and security best practices
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-                {{ range first 2 (where .Site.RegularPages "Section" "blog") }}
-                <article class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <time class="text-sm text-gray-500">{{ .Date.Format "January 2, 2006" }}</time>
-                            <span class="mx-2">•</span>
-                            <div class="flex flex-wrap gap-2">
-                                {{ range .Params.tags }}
-                                <span class="text-xs font-medium bg-gray-100 text-gray-800 px-2 py-1 rounded">
-                                    {{ . }}
-                                </span>
-                                {{ end }}
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-blue-800 mb-3">
-                            <a href="{{ .RelPermalink }}" class="hover:text-teal-600">{{ .Title }}</a>
-                        </h3>
-                        <p class="text-gray-600 mb-4">{{ .Summary }}</p>
-                        <a href="{{ .RelPermalink }}" class="text-teal-600 font-medium hover:text-blue-800">
-                            Read more →
-                        </a>
-                    </div>
-                </article>
-                {{ end }}
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="/blog/" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-800 hover:bg-blue-900">
-                    View All Articles
-                </a>
-            </div>
-        </div>
-    </section>
-{{ end }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evgeniy Gantman — Cloud Security Architect</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f2ed;
+    --cream: #ede9e1;
+    --accent: #c8441a;
+    --accent2: #1a4fc8;
+    --muted: #6b6560;
+    --border: rgba(100,90,80,0.2);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 3rem;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 3rem 6rem 3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-headline {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.8rem, 4.5vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(245,242,237,0.65);
+    max-width: 440px;
+    margin-bottom: 3rem;
+    line-height: 1.75;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
+  .btn-primary:hover {
+    background: #d94d1f;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-secondary:hover { color: var(--white); border-color: var(--white); }
+
+  .hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 3rem;
+  }
+
+  .hero-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .stat-box {
+    background: var(--black);
+    padding: 2rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .stat-box:hover { background: #111; }
+  .stat-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: width 0.4s;
+  }
+  .stat-box:hover::after { width: 100%; }
+
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+  .stat-num span { color: var(--accent); }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+  }
+
+  .hero-bg-line {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--border) 30%, var(--border) 70%, transparent);
+  }
+
+  /* PROOF BAR */
+  .proof-bar {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    overflow: hidden;
+    background: #0d0d0d;
+  }
+  .proof-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .proof-items {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .proof-item {
+    font-size: 0.82rem;
+    color: rgba(245,242,237,0.5);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .proof-item strong { color: var(--white); font-weight: 500; }
+
+  /* SERVICES */
+  .section {
+    padding: 7rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.1;
+  }
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .service-card {
+    background: var(--black);
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .service-card:hover { background: #0f0f0f; }
+
+  .service-icon {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .service-icon::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .service-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .service-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .service-price {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+
+  .service-duration {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .service-features {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .service-features li {
+    font-size: 0.82rem;
+    color: rgba(245,242,237,0.55);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .service-features li::before {
+    content: '\2192';
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.05em;
+  }
+
+  .service-card.featured {
+    background: #0f0a08;
+    border-left: 2px solid var(--accent);
+  }
+
+  /* RESULTS */
+  .results-section {
+    padding: 7rem 3rem;
+    background: #0d0d0d;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .results-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 4rem;
+  }
+
+  .result-item {
+    background: #0d0d0d;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+
+  .result-big {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3.5rem;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .result-big span { color: var(--accent); }
+
+  .result-text {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* WHO */
+  .who-section {
+    padding: 7rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+    align-items: start;
+  }
+
+  .who-text p {
+    font-size: 1rem;
+    color: rgba(245,242,237,0.7);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .who-text p strong { color: var(--white); font-weight: 500; }
+
+  .who-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+  .who-checklist li {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: rgba(245,242,237,0.65);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: background 0.2s;
+  }
+  .who-checklist li:hover { background: #0f0f0f; }
+  .who-checklist li:last-child { border-bottom: none; }
+  .who-check {
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: 0.1em;
+  }
+
+  /* STACK */
+  .stack-section {
+    padding: 5rem 3rem;
+    background: #0d0d0d;
+    border-top: 1px solid var(--border);
+  }
+  .stack-inner { max-width: 1200px; margin: 0 auto; }
+
+  .stack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 3rem;
+  }
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.75rem;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .tag:hover {
+    color: var(--white);
+    border-color: rgba(200,68,26,0.5);
+    background: rgba(200,68,26,0.05);
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    padding: 8rem 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-headline {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .cta-headline em { font-style: italic; color: var(--accent); }
+
+  .cta-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+  }
+
+  .cta-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-contact-row {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .cta-contact-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .cta-contact-item:hover { color: var(--white); }
+  .cta-contact-item span { color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #080808;
+  }
+  .footer-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .footer-links a {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.35s; }
+  .delay-4 { animation-delay: 0.5s; }
+
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* DIVIDER LINE */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent);
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 7rem 1.5rem 4rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .results-grid { grid-template-columns: 1fr 1fr; }
+    .who-grid { grid-template-columns: 1fr; }
+    .section { padding: 5rem 1.5rem; }
+    .results-section { padding: 5rem 1.5rem; }
+    .proof-bar { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 1rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">EG // Security</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag fade-up delay-1">Cloud Security Architect &middot; DevSecOps &middot; PCI DSS</div>
+    <h1 class="hero-headline fade-up delay-2">
+      Zero breaches.<br>
+      Zero audit<br>
+      <em>findings.</em>
+    </h1>
+    <p class="hero-sub fade-up delay-3">
+      I help fintech companies pass PCI DSS 4.0, harden AWS infrastructure, and build security operations &mdash; without slowing down engineering. 1M+ daily transactions secured.
+    </p>
+    <div class="hero-cta fade-up delay-4">
+      <a href="mailto:egDevOps@gmail.com" class="btn-primary">Book a Free 30-min Call &rarr;</a>
+      <a href="#services" class="btn-secondary">View Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-line"></div>
+    <div class="hero-stats-grid">
+      <div class="stat-box">
+        <div class="stat-num"><span>0</span></div>
+        <div class="stat-label">Security breaches since deployment</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num"><span>0</span></div>
+        <div class="stat-label">PCI DSS audit findings</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">99<span>.95%</span></div>
+        <div class="stat-label">Uptime SLA for payment processing</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">45<span>%</span></div>
+        <div class="stat-label">AWS cost reduction delivered</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">1<span>M+</span></div>
+        <div class="stat-label">Daily payment transactions secured</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">85<span>%</span></div>
+        <div class="stat-label">Reduction in standing CDE privileges</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <span class="proof-label">Verified results</span>
+  <div class="proof-items">
+    <span class="proof-item"><strong>PCI DSS 4.0 Level 1</strong> &middot; Zero findings</span>
+    <span class="proof-item"><strong>$81K/month</strong> AWS savings</span>
+    <span class="proof-item"><strong>127 hrs/week</strong> SOC automation</span>
+    <span class="proof-item"><strong>60%</strong> CDE scope reduction</span>
+    <span class="proof-item"><strong>15 min</strong> MTTD</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div id="services">
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">What I <em>deliver</em></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">Audit</div>
+      <div class="service-name">AWS Security Audit</div>
+      <div class="service-desc">Deep-dive analysis of your AWS environment against CIS Benchmarks, PCI DSS controls, and your specific threat model. You get a prioritised roadmap &mdash; not a checkbox report.</div>
+      <div class="service-price">From $2,500</div>
+      <div class="service-duration">Delivered in 1 week</div>
+      <ul class="service-features">
+        <li>40+ security checks across all accounts</li>
+        <li>IAM, network, data exposure analysis</li>
+        <li>Prioritised remediation roadmap</li>
+        <li>Executive summary + technical detail</li>
+      </ul>
+    </div>
+    <div class="service-card featured">
+      <div class="service-icon">Compliance</div>
+      <div class="service-name">PCI DSS 4.0 Readiness</div>
+      <div class="service-desc">Gap analysis, scope reduction strategy, and a concrete remediation plan so you pass your QSA audit &mdash; the first time. Built on a zero-findings track record.</div>
+      <div class="service-price">$6,000 &ndash; $8,000</div>
+      <div class="service-duration">2&ndash;3 weeks &middot; All 12 requirements covered</div>
+      <ul class="service-features">
+        <li>Full gap analysis vs. PCI DSS 4.0</li>
+        <li>CDE scoping + tokenization strategy</li>
+        <li>Evidence collection automation</li>
+        <li>QSA pre-audit readiness review</li>
+        <li>150+ automated compliance checks</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">Retainer</div>
+      <div class="service-name">DevSecOps Retainer</div>
+      <div class="service-desc">Ongoing security architecture support: CI/CD hardening, incident response, EKS security, SIEM tuning. Your part-time CISO without the full-time cost.</div>
+      <div class="service-price">$6,000 &ndash; $10,000 / mo</div>
+      <div class="service-duration">20 hrs/month &middot; Cancel anytime</div>
+      <ul class="service-features">
+        <li>Security review of all architecture changes</li>
+        <li>SIEM alert tuning + rule development</li>
+        <li>Incident response support (1hr SLA)</li>
+        <li>Monthly security posture report</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- RESULTS -->
+<div id="results">
+<div class="results-section">
+  <div class="results-inner">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Measurable <em>results</em></h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-item">
+        <div class="result-big"><span>$972K</span></div>
+        <div class="result-text">Annual AWS savings delivered for one client</div>
+      </div>
+      <div class="result-item">
+        <div class="result-big">60<span>%</span></div>
+        <div class="result-text">PCI DSS scope reduction via tokenisation</div>
+      </div>
+      <div class="result-item">
+        <div class="result-big">127<span>h</span></div>
+        <div class="result-text">Analyst hours saved per week via SOAR automation</div>
+      </div>
+      <div class="result-item">
+        <div class="result-big"><span>&lt;</span>15<span>m</span></div>
+        <div class="result-text">Mean time to detection across all environments</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ABOUT / WHO -->
+<div id="about">
+<div class="who-section">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Who I <em>am</em></h2>
+  </div>
+  <div class="who-grid">
+    <div class="who-text">
+      <p>I'm a <strong>Senior Cloud Security Architect and DevSecOps leader</strong> with 15+ years of hands-on experience &mdash; from self-taught sysadmin to CISO-level advisor at a PCI DSS Level 1 payment processor handling 1M+ daily transactions.</p>
+      <p>I don't write specs for others to implement. <strong>I build the things myself</strong> &mdash; 99 AWS Terraform modules, 500+ Wazuh detection rules, 80+ SOAR workflows, 45 production Helm charts. Every control is tested in production, not on paper.</p>
+      <p>My background is unusual: BIM coordinator for a 260,000m&sup2; Gazprom complex, then fintech DevOps, then Cloud Security Architect. That breadth means I see problems most specialists miss &mdash; and I communicate clearly with both CTOs and QSAs.</p>
+      <p><strong>Based in Israel. Available globally, remote.</strong></p>
+    </div>
+    <ul class="who-checklist">
+      <li><span class="who-check">&#10003;</span> Zero-breach track record across fintech, crypto, and payment processing</li>
+      <li><span class="who-check">&#10003;</span> PCI DSS 4.0 Level 1 &mdash; zero audit findings (all 12 requirements)</li>
+      <li><span class="who-check">&#10003;</span> AWS multi-account architecture (10+ accounts, 3 cloud providers)</li>
+      <li><span class="who-check">&#10003;</span> NIST CSF 2.0 &middot; ISO 27001 &middot; SOC 2 Type II &middot; CIS Controls v8</li>
+      <li><span class="who-check">&#10003;</span> EKS security hardening (CIS EKS Benchmark v1.4.0)</li>
+      <li><span class="who-check">&#10003;</span> Dual-SIEM: Wazuh + Security Onion NDR, 500+ custom rules</li>
+      <li><span class="who-check">&#10003;</span> SLSA Level 3 supply chain security for all production images</li>
+      <li><span class="who-check">&#10003;</span> Local LLM inference for security analysis (RTX 5090, DeepSeek R1)</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!-- STACK -->
+<div class="stack-section">
+  <div class="stack-inner">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Tech <em>stack</em></h2>
+    </div>
+    <div class="stack-tags">
+      <span class="tag">AWS</span>
+      <span class="tag">Yandex Cloud</span>
+      <span class="tag">GCP</span>
+      <span class="tag">EKS</span>
+      <span class="tag">Terraform / OpenTofu</span>
+      <span class="tag">Terragrunt</span>
+      <span class="tag">ArgoCD</span>
+      <span class="tag">Istio / mTLS</span>
+      <span class="tag">Wazuh SIEM</span>
+      <span class="tag">Security Onion</span>
+      <span class="tag">Falco</span>
+      <span class="tag">OPA Gatekeeper</span>
+      <span class="tag">Kyverno</span>
+      <span class="tag">HashiCorp Vault</span>
+      <span class="tag">Teleport JIT</span>
+      <span class="tag">Cosign / SLSA</span>
+      <span class="tag">Trivy</span>
+      <span class="tag">Snyk</span>
+      <span class="tag">Semgrep</span>
+      <span class="tag">n8n SOAR</span>
+      <span class="tag">AWS GuardDuty</span>
+      <span class="tag">AWS Security Hub</span>
+      <span class="tag">AWS Control Tower</span>
+      <span class="tag">Prometheus + Grafana</span>
+      <span class="tag">Loki</span>
+      <span class="tag">Keycloak</span>
+      <span class="tag">Python</span>
+      <span class="tag">Sigma Rules</span>
+      <span class="tag">MITRE ATT&amp;CK</span>
+      <span class="tag">PCI DSS 4.0</span>
+      <span class="tag">NIST CSF 2.0</span>
+      <span class="tag">ISO 27001</span>
+      <span class="tag">SOC 2</span>
+      <span class="tag">Ollama / LLM</span>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div id="contact">
+<div class="cta-section">
+  <h2 class="cta-headline">
+    Ready to build security<br>that <em>actually works?</em>
+  </h2>
+  <p class="cta-sub">
+    Free 30-minute call. No pitch, no sales deck &mdash; just an honest conversation about your security posture and where to start.
+  </p>
+  <div class="cta-options">
+    <a href="mailto:egDevOps@gmail.com" class="btn-primary" style="font-size:1rem; padding: 1.1rem 2.5rem;">
+      Book a Free Call &rarr; egDevOps@gmail.com
+    </a>
+  </div>
+  <div class="cta-contact-row">
+    <a href="https://t.me/tachys" class="cta-contact-item"><span>TG</span> @tachys</a>
+    <a href="https://wa.me/972553189185" class="cta-contact-item"><span>WA</span> +972 553 189 185</a>
+    <a href="https://linkedin.com/in/evgeniy-gantman" class="cta-contact-item"><span>LI</span> linkedin.com/in/evgeniy-gantman</a>
+    <a href="https://github.com/gantmane" class="cta-contact-item"><span>GH</span> github.com/gantmane</a>
+  </div>
+</div>
+</div>
+
+<footer>
+  <div class="footer-logo">EVGENIY GANTMAN &middot; CLOUD SECURITY ARCHITECT</div>
+  <ul class="footer-links">
+    <li><a href="https://github.com/gantmane">GitHub</a></li>
+    <li><a href="https://linkedin.com/in/evgeniy-gantman">LinkedIn</a></li>
+    <li><a href="mailto:egDevOps@gmail.com">Email</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
