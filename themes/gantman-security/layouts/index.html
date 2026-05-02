@@ -3,9 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evgeniy Gantman — Cloud Security Architect</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Cloud Security Architect · PCI · DORA · NIS2 | Gantman</title>
+<meta name="description" content="Zero breaches, zero audit findings on 1M+ daily transactions. Cloud security architect &amp; vCISO for EU/CIS/GCC — PCI DSS 4.0, DORA, NIS2, AI Act.">
+<link rel="canonical" href="https://gantman.biz/">
+<meta name="keywords" content="DORA compliance, NIS2 readiness, EU AI Act, vCISO Europe, PCI DSS 4.0, AWS security architect, AI SOC automation, Terraform security modules">
+<meta property="og:title" content="Evgeniy Gantman — Cloud Security Architect">
+<meta property="og:description" content="Cloud security architect & vCISO for EU, CIS, and GCC. Zero breaches, zero audit findings.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://gantman.biz/">
+<meta property="og:image" content="https://gantman.biz/img/og-image.svg">
+<meta property="og:image:type" content="image/svg+xml">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- TODO before public launch: export og-image.svg to og-image.png and switch meta tags. X/Twitter cards need PNG/JPG; LinkedIn/Slack accept SVG. -->
+<meta name="theme-color" content="#0a0a0a">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Evgeniy Gantman",
+  "jobTitle": "Cloud Security Architect",
+  "url": "https://gantman.biz/",
+  "email": "egDevOps@gmail.com",
+  "sameAs": [
+    "https://linkedin.com/in/evgeniy-gantman",
+    "https://github.com/gantmane"
+  ],
+  "knowsAbout": ["PCI DSS 4.0", "DORA", "NIS2", "EU AI Act", "AWS Security", "Kubernetes Security", "DevSecOps", "Zero Trust"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Cloud Security Architecture & vCISO — Evgeniy Gantman",
+  "provider": {"@type": "Person", "name": "Evgeniy Gantman", "url": "https://gantman.biz/"},
+  "serviceType": ["vCISO", "Cloud Security Architecture", "DevSecOps Retainer", "PCI DSS 4.0 Readiness", "DORA Compliance Advisory", "AI-augmented SOC"],
+  "areaServed": [
+    {"@type": "Place", "name": "European Union"},
+    {"@type": "Place", "name": "Commonwealth of Independent States"},
+    {"@type": "Place", "name": "Gulf Cooperation Council"}
+  ],
+  "priceRange": "$2,500 — $25,000+",
+  "url": "https://gantman.biz/#services",
+  "description": "Cloud security architecture, vCISO, AI-augmented SOC, and compliance readiness for regulated companies — PCI DSS 4.0, DORA, NIS2, AI Act, GDPR."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is DORA and when does it apply?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DORA (Digital Operational Resilience Act) is EU Regulation 2022/2554 covering ICT risk management for financial entities — banks, insurers, payment institutions, crypto-asset service providers, and their critical ICT third parties. Compliance applies from 17 January 2025; enforcement and major-incident reporting are now active across the EU."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who needs PCI DSS Level 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any organisation processing more than 6 million card transactions per brand per year, or any entity Visa or Mastercard explicitly designates as Level 1. Service providers handling cardholder data on behalf of merchants typically default to Level 1 regardless of volume. Annual on-site QSA audit plus quarterly ASV scans are required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a vCISO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A virtual or fractional CISO — embedded security leadership without the full-time hire. Typical engagement: 20-40 hours per month covering board reporting, regulator liaison (QSA / NIS2 CSIRT), incident response, vendor risk reviews, and security architecture reviews. For Series-B fintechs and 50-500-employee regulated firms it is the standard alternative to a $300K/year CISO hire."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is NIS2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NIS2 (Directive (EU) 2022/2555) extends EU cybersecurity obligations to roughly 160,000 entities across 18 sectors — energy, transport, healthcare, digital infrastructure, manufacturing, public administration, and more. National transposition deadline was 17 October 2024; member states are now actively enforcing. Major obligations include risk-management measures, 24-hour early-warning and 72-hour notification on significant incidents, and management-body accountability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does the EU AI Act enter into force?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The EU AI Act entered into force 1 August 2024. Prohibited practices applied from 2 February 2025. General-purpose AI obligations apply from 2 August 2025. High-risk system obligations (Annex III, Article 6) and most conformity-assessment requirements apply from 2 August 2026. Annex IV technical documentation for high-risk systems is in scope from August 2026."
+      }
+    }
+  ]
+}
+</script>
 <style>
+  /* Self-hosted DM Serif Display, DM Mono, DM Sans — latin subset only.
+     No Google Fonts CDN — keeps site dependency-free, GDPR-clean, CSP-tight. */
+  @font-face {
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/dm-serif-display-400.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'DM Serif Display';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/dm-serif-display-400-italic.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'DM Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/dm-mono-400.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'DM Mono';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/dm-mono-500.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 300 500;
+    font-display: swap;
+    src: url('/fonts/dm-sans-variable.woff2') format('woff2');
+  }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -208,6 +339,113 @@
     background: linear-gradient(to bottom, transparent, var(--border) 30%, var(--border) 70%, transparent);
   }
 
+  /* SECTOR-TRUST STRIP — text-only, sits between proof bar and Frolov line */
+  .trust-strip {
+    background: #0d0d0d;
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.66rem;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .trust-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.74rem;
+    color: rgba(245,242,237,0.7);
+    letter-spacing: 0.05em;
+  }
+  .trust-item strong { color: var(--white); font-weight: 500; }
+
+  /* TESTIMONIAL — single-line attributed strip, primes trust under proof bar */
+  .testimonial-strip {
+    padding: 1.25rem 3rem;
+    background: var(--black);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    font-size: 0.88rem;
+    color: rgba(245,242,237,0.78);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .testimonial-strip-quote::before { content: '\201C'; color: var(--accent); margin-right: 0.15em; }
+  .testimonial-strip-quote::after  { content: '\201D'; color: var(--accent); margin-left: 0.15em; }
+  .testimonial-strip-attribution {
+    display: inline-block;
+    margin-left: 1rem;
+    font-style: normal;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* TESTIMONIAL BAND — two contextual quotes between services and products */
+  .testimonial-band {
+    padding: 3rem 3rem;
+    background: #0d0d0d;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .testimonial-band-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .testimonial-card {
+    background: #0d0d0d;
+    padding: 2rem 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: background 0.3s;
+  }
+  .testimonial-card:hover { background: #111; }
+  .testimonial-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    line-height: 1.45;
+    color: var(--white);
+    font-style: italic;
+    position: relative;
+  }
+  .testimonial-quote::before {
+    content: '\201C';
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-right: 0.1em;
+  }
+  .testimonial-attribution {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .testimonial-attribution strong { color: var(--white); font-weight: 500; }
+  .testimonial-band-footnote {
+    text-align: center;
+    margin-top: 1.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
   /* PROOF BAR */
   .proof-bar {
     border-top: 1px solid var(--border);
@@ -302,11 +540,14 @@
     background: var(--accent);
   }
 
-  .service-name {
+  h3.service-name, .service-name {
     font-family: 'DM Serif Display', serif;
     font-size: 1.4rem;
     margin-bottom: 1rem;
     line-height: 1.2;
+    font-weight: 400;
+    margin-top: 0;
+    color: var(--white);
   }
 
   .service-desc {
@@ -354,6 +595,586 @@
   .service-card.featured {
     background: #0f0a08;
     border-left: 2px solid var(--accent);
+  }
+
+  /* vCISO+SOC full-width featured row */
+  .services-grid-wide {
+    grid-template-columns: 1fr;
+    margin-top: 1px;
+  }
+  .service-card-wide {
+    padding: 2.5rem 2.5rem 2rem;
+  }
+  .service-card-vciso {
+    background: linear-gradient(135deg, #0f0a08 0%, var(--black) 60%);
+    border-left: 2px solid var(--accent);
+    position: relative;
+  }
+  .vciso-popular-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--accent);
+    padding: 0.25rem 0.6rem;
+    background: rgba(200,68,26,0.08);
+  }
+  .vciso-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .vciso-pricing { text-align: right; }
+  .vciso-pricing .service-price { font-size: 1.25rem; }
+  .vciso-tier-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 1.75rem 0;
+  }
+  .vciso-tier {
+    background: var(--black);
+    padding: 1rem 1.25rem;
+    transition: background 0.3s;
+  }
+  .vciso-tier:hover { background: #111; }
+  .vciso-tier-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .vciso-tier-desc {
+    font-size: 0.78rem;
+    color: rgba(245,242,237,0.55);
+    line-height: 1.45;
+  }
+  .service-features-wide {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.55rem 1.5rem;
+  }
+  .vciso-bundles {
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .vciso-bundles-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+  .vciso-bundle-chip {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.75rem;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .vciso-bundle-chip:hover {
+    color: var(--white);
+    border-color: rgba(200,68,26,0.5);
+    background: rgba(200,68,26,0.05);
+  }
+
+  /* PRODUCTS */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .product-card {
+    background: var(--black);
+    padding: 2.25rem 2rem 2rem;
+    position: relative;
+    transition: background 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-card:hover { background: #0f0f0f; }
+  .product-readiness {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid rgba(200,68,26,0.35);
+    padding: 0.2rem 0.5rem;
+    background: rgba(200,68,26,0.05);
+  }
+  .product-readiness.ready {
+    color: #88c997;
+    border-color: rgba(136,201,151,0.4);
+    background: rgba(136,201,151,0.05);
+  }
+  .product-audience {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .product-tier-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .tier {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.66rem;
+    color: rgba(245,242,237,0.7);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.55rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .tier.tier-accent {
+    border-color: rgba(200,68,26,0.5);
+    color: var(--white);
+  }
+  .product-card .service-desc { margin-bottom: 1.25rem; }
+  .product-card .service-features {
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+    flex: 1;
+  }
+  .product-cta {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    border: 1px solid rgba(200,68,26,0.4);
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    align-self: flex-start;
+  }
+  .product-cta:hover {
+    background: rgba(200,68,26,0.08);
+    border-color: var(--accent);
+    color: var(--white);
+  }
+
+  /* UI-CHROME WRAPPER — makes each demo read as a "screenshot" of a product surface.
+     Two variants: ui-shot-term (terminal: dots + title + tag) and
+     ui-shot-app (browser: dots + faux URL row). Caption row enforces honesty
+     for pre-launch products ("Concept preview · Coming Q3 2026"). */
+  .ui-shot {
+    margin: 0 0 0.5rem;
+    border: 1px solid var(--border);
+    background: #070707;
+    overflow: hidden;
+  }
+  .ui-shot-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.45rem 0.7rem;
+    background: linear-gradient(#101010, #0a0a0a);
+    border-bottom: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.64rem;
+    color: var(--muted);
+  }
+  .ui-shot-dots { display: inline-flex; gap: 5px; flex-shrink: 0; }
+  .ui-shot-dots i {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--border);
+  }
+  .ui-shot-dots i:first-child { background: var(--accent); opacity: 0.55; }
+  .ui-shot-title {
+    flex: 1;
+    text-align: center;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ui-shot-tag {
+    border: 1px solid var(--border);
+    padding: 0.05rem 0.4rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .ui-shot-app .ui-shot-bar { background: linear-gradient(#0e0e10, #0a0a0c); }
+  .ui-shot-app .ui-shot-url {
+    flex: 1;
+    font-size: 0.6rem;
+    padding: 0.18rem 0.55rem;
+    background: var(--black);
+    border: 1px solid var(--border);
+    color: rgba(245,242,237,0.55);
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .ui-shot-body { padding: 0; }
+  .ui-shot-body .demo-frame {
+    border: 0;
+    margin: 0;
+    min-height: 200px;
+    max-height: 280px;
+  }
+  .ui-shot-caption {
+    padding: 0.4rem 0.7rem;
+    border-top: 1px dashed var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  @media (max-width: 560px) {
+    .ui-shot-title { font-size: 0.58rem; }
+    .ui-shot-tag, .ui-shot-app .ui-shot-url { display: none; }
+  }
+
+  /* DEMO FRAME — shared scaffolding for per-product demo partials */
+  .demo-frame {
+    border: 1px solid var(--border);
+    background: #070707;
+    padding: 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    line-height: 1.55;
+    color: rgba(245,242,237,0.7);
+    min-height: 180px;
+    max-height: 320px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+  .demo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .demo-prompt { color: var(--accent); }
+  .demo-comment { color: var(--muted); }
+  .demo-success { color: #88c997; }
+
+  /* DEMO 1: K8s Compliance Operator — staggered fade-in terminal lines */
+  .demo-k8s { font-size: 0.7rem; line-height: 1.7; padding-top: 0.85rem; }
+  .demo-k8s-line {
+    white-space: pre-wrap;
+    opacity: 0;
+    transform: translateY(2px);
+    animation: demo-k8s-in 0.28s ease forwards;
+  }
+  .demo-k8s-line:nth-child(1) { animation-delay: 0.10s; }
+  .demo-k8s-line:nth-child(2) { animation-delay: 0.45s; }
+  .demo-k8s-line:nth-child(3) { animation-delay: 0.95s; }
+  .demo-k8s-line:nth-child(4) { animation-delay: 1.35s; }
+  .demo-k8s-line:nth-child(5) { animation-delay: 1.65s; }
+  .demo-k8s-line:nth-child(6) { animation-delay: 1.95s; }
+  .demo-k8s-line:nth-child(7) { animation-delay: 2.25s; }
+  .demo-k8s-line:nth-child(8) { animation-delay: 2.6s; }
+  .demo-k8s-line-out { color: rgba(245,242,237,0.55); margin-top: 0.4rem; }
+  .demo-k8s-line-success { color: #88c997; }
+  .demo-k8s-line-comment { color: var(--muted); font-style: italic; margin-top: 0.4rem; }
+  @keyframes demo-k8s-in {
+    to { opacity: 1; transform: none; }
+  }
+
+  /* DEMO 2: EU AI Act Doc Generator — cover slides in, 4 artifact tiles fade up with check */
+  .demo-aiact { padding: 0.85rem; display: flex; flex-direction: column; gap: 0.65rem; }
+  .demo-aiact-cover {
+    background: linear-gradient(135deg, rgba(200,68,26,0.14), rgba(26,79,200,0.08));
+    border: 1px solid rgba(200,68,26,0.3);
+    padding: 0.75rem 0.9rem;
+    transform: translateX(-12px);
+    opacity: 0;
+    animation: demo-aiact-cover-in 0.4s 0.15s ease forwards;
+  }
+  .demo-aiact-cover-tag {
+    font-size: 0.6rem;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    margin-bottom: 0.3rem;
+  }
+  .demo-aiact-cover-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+  .demo-aiact-cover-meta {
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .demo-aiact-tiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem;
+  }
+  .demo-aiact-tile {
+    background: var(--black);
+    border: 1px solid var(--border);
+    padding: 0.55rem 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(4px);
+    animation: demo-aiact-tile-in 0.35s ease forwards;
+    animation-delay: var(--d);
+  }
+  .demo-aiact-tile-name {
+    font-size: 0.7rem;
+    color: rgba(245,242,237,0.75);
+    letter-spacing: 0.03em;
+  }
+  .demo-aiact-tile-check {
+    color: #88c997;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+  }
+  @keyframes demo-aiact-cover-in {
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes demo-aiact-tile-in {
+    to { opacity: 1; transform: none; }
+  }
+
+  /* DEMO 3: Agentic AI Toolkit — static syntax-highlighted YAML */
+  .demo-yaml { padding: 0.9rem 1rem; }
+  .demo-yaml-code {
+    margin: 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.66rem;
+    line-height: 1.65;
+    white-space: pre;
+    overflow-x: auto;
+    color: rgba(245,242,237,0.7);
+  }
+  .demo-yaml .yk { color: var(--accent); }       /* keys */
+  .demo-yaml .ys { color: #d4cdb8; }              /* strings */
+  .demo-yaml .yc { color: var(--muted); font-style: italic; }  /* comments */
+
+  /* DEMO 4: DORA Incident Platform — before/after side-by-side */
+  .demo-dora {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+  }
+  .demo-dora-side {
+    background: #070707;
+    padding: 0.85rem 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .demo-dora-manual { background: #060606; }
+  .demo-dora-auto { background: #0a0d0a; border-left: 2px solid #88c997; }
+  .demo-dora-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+  .demo-dora-auto .demo-dora-label { color: #88c997; }
+  .demo-dora-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: 0.66rem;
+  }
+  .demo-dora-key {
+    color: var(--muted);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .demo-dora-val { color: rgba(245,242,237,0.8); }
+  .demo-dora-empty { color: rgba(245,242,237,0.25); font-style: italic; }
+  .demo-dora-ok { color: #88c997; }
+  .demo-dora-time-bad { color: var(--accent); }
+  .demo-dora-time-good { color: #88c997; font-weight: 500; }
+  .demo-dora-badge {
+    display: inline-block;
+    background: rgba(200,68,26,0.15);
+    color: var(--accent);
+    border: 1px solid rgba(200,68,26,0.5);
+    padding: 0.15rem 0.5rem;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    align-self: flex-start;
+  }
+  @media (max-width: 600px) {
+    .demo-dora { grid-template-columns: 1fr; }
+    .demo-dora-auto { border-left: none; border-top: 2px solid #88c997; }
+  }
+
+  /* DEMO 5: Air-Gapped Platform — directory tree */
+  .demo-tree { padding: 0.95rem 1rem; }
+  .demo-tree-code {
+    margin: 0;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    line-height: 1.7;
+    white-space: pre;
+    color: rgba(245,242,237,0.7);
+  }
+  .demo-tree-dir { color: var(--accent); font-weight: 500; }
+  .demo-tree-installer { color: #88c997; font-weight: 500; }
+  .demo-tree-meta { color: var(--muted); font-style: italic; }
+  .demo-tree-comment { color: var(--muted); font-style: italic; display: block; margin-bottom: 0.5rem; }
+
+  /* DEMO 6: Multi-Framework Evidence Graph — animated SVG, finite iterations */
+  .demo-graph {
+    padding: 0.6rem 0.8rem 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .demo-graph-svg {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    color: var(--accent);
+  }
+  .demo-graph-line {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    will-change: stroke-dashoffset;
+    animation: demo-graph-draw 1.2s ease forwards;
+    animation-delay: var(--d);
+  }
+  .demo-graph-frameworks circle { fill: var(--accent); opacity: 0; animation: demo-graph-fade 0.4s ease 1.4s forwards; }
+  .demo-graph-frameworks .demo-graph-fw {
+    fill: rgba(245,242,237,0.78);
+    font-family: 'DM Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    animation: demo-graph-fade 0.4s ease 1.45s forwards;
+  }
+  .demo-graph-evidence-bg { fill: rgba(200,68,26,0.08); }
+  .demo-graph-evidence-ring {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    transform-origin: 78px 100px;
+    animation: demo-graph-pulse 2.8s ease-out 1.6s 3 forwards;
+  }
+  .demo-graph-evidence-label1 {
+    fill: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 6.5px;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+  }
+  .demo-graph-evidence-label2 {
+    fill: rgba(245,242,237,0.55);
+    font-family: 'DM Mono', monospace;
+    font-size: 6px;
+    font-style: italic;
+  }
+  .demo-graph-caption {
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
+  @keyframes demo-graph-draw {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes demo-graph-fade {
+    to { opacity: 1; }
+  }
+  @keyframes demo-graph-pulse {
+    0%   { stroke-opacity: 1; transform: scale(1); }
+    50%  { stroke-opacity: 0.3; transform: scale(1.08); }
+    100% { stroke-opacity: 1; transform: scale(1); }
+  }
+
+  /* ROADMAP STRIP — 5 blue-ocean ideas as mailto chips */
+  .roadmap-strip {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .roadmap-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+  .roadmap-chip {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.75rem;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: all 0.2s;
+  }
+  .roadmap-chip:hover {
+    color: var(--white);
+    border-color: rgba(200,68,26,0.5);
+    background: rgba(200,68,26,0.05);
+  }
+  .roadmap-cta {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  .roadmap-cta .product-cta {
+    align-self: center;
   }
 
   /* RESULTS */
@@ -447,6 +1268,47 @@
     margin-top: 0.1em;
   }
 
+  /* ARCHITECTURE DECISIONS — small "How I think" strip inside Who section */
+  .arch-decisions {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .arch-decisions-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+  .arch-decisions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .arch-decision {
+    background: var(--black);
+    padding: 1.5rem 1.5rem 1.4rem;
+    transition: background 0.3s;
+  }
+  .arch-decision:hover { background: #0f0f0f; }
+  .arch-decision-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+  }
+  .arch-decision-title em { color: var(--accent); font-style: italic; }
+  .arch-decision-body {
+    font-size: 0.84rem;
+    color: rgba(245,242,237,0.65);
+    line-height: 1.6;
+  }
+
   /* STACK */
   .stack-section {
     padding: 5rem 3rem;
@@ -474,6 +1336,55 @@
     color: var(--white);
     border-color: rgba(200,68,26,0.5);
     background: rgba(200,68,26,0.05);
+  }
+
+  /* FAQ — native <details>/<summary>, zero JS, schema-matched */
+  .faq-section {
+    padding: 6rem 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .faq-list {
+    margin-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+  .faq-item[open] { background: rgba(200,68,26,0.02); }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: var(--white);
+    line-height: 1.3;
+    transition: color 0.2s;
+  }
+  .faq-item summary:hover { color: var(--accent); }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-family: 'DM Mono', monospace;
+    font-size: 1.4rem;
+    color: var(--accent);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    line-height: 1;
+  }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-answer {
+    padding: 0 0 1.5rem 0;
+    font-size: 0.95rem;
+    color: rgba(245,242,237,0.7);
+    line-height: 1.7;
+    max-width: 780px;
   }
 
   /* CTA SECTION */
@@ -588,6 +1499,26 @@
     background: linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent);
   }
 
+  /* REDUCED MOTION — blanket guard for everyone who opts out of animations.
+     Honors prefers-reduced-motion: reduce. Demos still display content, just
+     without movement (typewriter lines visible immediately, SVG lines drawn
+     statically, no pulse, no fade-up). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .demo-k8s-line,
+    .demo-aiact-cover,
+    .demo-aiact-tile { opacity: 1 !important; transform: none !important; }
+    .demo-graph-line { stroke-dashoffset: 0 !important; }
+    .demo-graph-evidence-ring { animation: none !important; }
+    .demo-graph-frameworks circle,
+    .demo-graph-frameworks .demo-graph-fw { opacity: 1 !important; }
+  }
+
   @media (max-width: 900px) {
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { display: none; }
@@ -601,6 +1532,18 @@
     .results-section { padding: 5rem 1.5rem; }
     .proof-bar { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 1rem; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .service-card-wide { padding: 2rem 1.5rem; }
+    .vciso-header { flex-direction: column; }
+    .vciso-pricing { text-align: left; }
+    .vciso-tier-strip { grid-template-columns: 1fr; }
+    .service-features-wide { grid-template-columns: 1fr; }
+    .products-grid { grid-template-columns: 1fr; }
+    .arch-decisions-grid { grid-template-columns: 1fr; }
+    .trust-strip { padding: 0.85rem 1.5rem; flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+    .testimonial-strip { padding: 1rem 1.5rem; flex-direction: column; }
+    .testimonial-strip-attribution { display: block; margin-left: 0; margin-top: 0.4rem; }
+    .testimonial-band { padding: 2.5rem 1.5rem; }
+    .testimonial-band-inner { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -610,6 +1553,7 @@
   <div class="nav-logo">EG // Security</div>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#products">Products</a></li>
     <li><a href="#results">Results</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -619,18 +1563,17 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag fade-up delay-1">Cloud Security Architect &middot; DevSecOps &middot; PCI DSS</div>
+    <div class="hero-tag fade-up delay-1">Cloud Security Architect &middot; DevSecOps &middot; EU + CIS regulated-sector compliance</div>
     <h1 class="hero-headline fade-up delay-2">
       Zero breaches.<br>
       Zero audit<br>
       <em>findings.</em>
     </h1>
     <p class="hero-sub fade-up delay-3">
-      I help fintech companies pass PCI DSS 4.0, harden AWS infrastructure, and build security operations &mdash; without slowing down engineering. 1M+ daily transactions secured.
+      I design and ship security platforms for regulated companies across the EU, CIS, and GCC &mdash; DORA, NIS2, AI Act, GDPR, PCI DSS 4.0, 152-FZ. Two production platforms in the field, four shipping in 2026. Working code, not just architecture decks.
     </p>
     <div class="hero-cta fade-up delay-4">
       <a href="mailto:egDevOps@gmail.com" class="btn-primary">Book a Free 30-min Call &rarr;</a>
-      <a href="#services" class="btn-secondary">View Services</a>
     </div>
   </div>
   <div class="hero-right">
@@ -642,38 +1585,42 @@
       </div>
       <div class="stat-box">
         <div class="stat-num"><span>0</span></div>
-        <div class="stat-label">PCI DSS audit findings</div>
+        <div class="stat-label">PCI DSS Level 1 audit findings</div>
       </div>
       <div class="stat-box">
         <div class="stat-num">99<span>.95%</span></div>
         <div class="stat-label">Uptime SLA for payment processing</div>
       </div>
       <div class="stat-box">
-        <div class="stat-num">45<span>%</span></div>
-        <div class="stat-label">AWS cost reduction delivered</div>
-      </div>
-      <div class="stat-box">
         <div class="stat-num">1<span>M+</span></div>
         <div class="stat-label">Daily payment transactions secured</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">85<span>%</span></div>
-        <div class="stat-label">Reduction in standing CDE privileges</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROOF BAR -->
+<!-- PROOF BAR (data-driven from data/metrics.json) -->
 <div class="proof-bar">
   <span class="proof-label">Verified results</span>
   <div class="proof-items">
-    <span class="proof-item"><strong>PCI DSS 4.0 Level 1</strong> &middot; Zero findings</span>
-    <span class="proof-item"><strong>$81K/month</strong> AWS savings</span>
-    <span class="proof-item"><strong>127 hrs/week</strong> SOC automation</span>
-    <span class="proof-item"><strong>60%</strong> CDE scope reduction</span>
-    <span class="proof-item"><strong>15 min</strong> MTTD</span>
+    {{ range .Site.Data.metrics.proof }}
+    <span class="proof-item"><strong>{{ .strong }}</strong>{{ with .label }} &middot; {{ . }}{{ end }}</span>
+    {{ end }}
   </div>
+</div>
+
+<!-- Sector-trust strip — anonymized references to anchor "real companies, real domains" -->
+<div class="trust-strip">
+  <span class="trust-label">Built for / shipped at</span>
+  <span class="trust-item"><strong>Fintech</strong> &middot; PCI DSS L1 payment processor &middot; 1M+ daily tx</span>
+  <span class="trust-item"><strong>Crypto exchange</strong> &middot; multi-cloud, 200TB Ceph, on-prem + GKE</span>
+  <span class="trust-item"><strong>Industrial</strong> &middot; 260,000 m&sup2; complex &middot; 50-user BIM platform</span>
+</div>
+
+<!-- Single-line testimonial primes trust early (anonymized pending re-consent) -->
+<div class="testimonial-strip">
+  <span class="testimonial-strip-quote">He's the kind of person every CTO wants on their side.</span>
+  <span class="testimonial-strip-attribution">D.&#160;F. &middot; Head of Engineering / Deputy CTO, fintech</span>
 </div>
 
 <!-- SERVICES -->
@@ -686,8 +1633,8 @@
   <div class="services-grid">
     <div class="service-card">
       <div class="service-icon">Audit</div>
-      <div class="service-name">AWS Security Audit</div>
-      <div class="service-desc">Deep-dive analysis of your AWS environment against CIS Benchmarks, PCI DSS controls, and your specific threat model. You get a prioritised roadmap &mdash; not a checkbox report.</div>
+      <h3 class="service-name">AWS Security Audit</h3>
+      <div class="service-desc">Deep-dive of your AWS estate against CIS Benchmarks, PCI DSS, DORA ICT, and your specific threat model. You get a prioritised roadmap &mdash; not a checkbox report.</div>
       <div class="service-price">From $2,500</div>
       <div class="service-duration">Delivered in 1 week</div>
       <ul class="service-features">
@@ -699,7 +1646,7 @@
     </div>
     <div class="service-card featured">
       <div class="service-icon">Compliance</div>
-      <div class="service-name">PCI DSS 4.0 Readiness</div>
+      <h3 class="service-name">PCI DSS 4.0 Readiness</h3>
       <div class="service-desc">Gap analysis, scope reduction strategy, and a concrete remediation plan so you pass your QSA audit &mdash; the first time. Built on a zero-findings track record.</div>
       <div class="service-price">$6,000 &ndash; $8,000</div>
       <div class="service-duration">2&ndash;3 weeks &middot; All 12 requirements covered</div>
@@ -713,8 +1660,8 @@
     </div>
     <div class="service-card">
       <div class="service-icon">Retainer</div>
-      <div class="service-name">DevSecOps Retainer</div>
-      <div class="service-desc">Ongoing security architecture support: CI/CD hardening, incident response, EKS security, SIEM tuning. Your part-time CISO without the full-time cost.</div>
+      <h3 class="service-name">DevSecOps Retainer</h3>
+      <div class="service-desc">Ongoing security architecture: CI/CD hardening, EKS, SIEM tuning, incident response. Embedded engineering &mdash; not advisory hours.</div>
       <div class="service-price">$6,000 &ndash; $10,000 / mo</div>
       <div class="service-duration">20 hrs/month &middot; Cancel anytime</div>
       <ul class="service-features">
@@ -725,6 +1672,211 @@
       </ul>
     </div>
   </div>
+
+  <!-- vCISO + AI-SOC: full-width featured row -->
+  <div class="services-grid services-grid-wide">
+    <div class="service-card service-card-wide service-card-vciso">
+      <div class="vciso-popular-badge">Most-asked for DORA buyers</div>
+      <div class="vciso-header">
+        <div>
+          <div class="service-icon">vCISO+SOC</div>
+          <h3 class="service-name">vCISO + AI-SOC</h3>
+        </div>
+        <div class="vciso-pricing">
+          <div class="service-price">From $5,000 / mo</div>
+          <div class="service-duration">scaling to full-stack MDR &middot; 6-month minimum</div>
+        </div>
+      </div>
+      <div class="service-desc">Embedded security leadership plus a 24/7 SOC where AI handles triage and humans handle decisions. Regulator liaison included &mdash; QSAs, NIS2 CSIRTs, regional regulators on request.</div>
+
+      <div class="vciso-tier-strip">
+        <div class="vciso-tier"><div class="vciso-tier-name">Advisory</div><div class="vciso-tier-desc">Quarterly board reviews, risk register, policy</div></div>
+        <div class="vciso-tier"><div class="vciso-tier-name">Operational</div><div class="vciso-tier-desc">Hands-on architecture + SOC oversight</div></div>
+        <div class="vciso-tier"><div class="vciso-tier-name">Full-Stack</div><div class="vciso-tier-desc">vCISO + 24/7 MDR + IR + audit prep</div></div>
+      </div>
+
+      <ul class="service-features service-features-wide">
+        <li>Quarterly board-ready risk reports (DORA Art. 5/6 compatible)</li>
+        <li>24/7 AI-augmented SOC triage &middot; 15-min MTTD &middot; 1-hr IR SLA</li>
+        <li>Tabletop exercises + purple team validation</li>
+        <li>Regulator liaison: QSA, NIS2 CSIRT, regional regulators</li>
+        <li>Vendor &amp; third-party risk reviews (DORA TPRM)</li>
+      </ul>
+
+      <div class="vciso-bundles">
+        <span class="vciso-bundles-label">Bundles available:</span>
+        <a class="vciso-bundle-chip" href="mailto:egDevOps@gmail.com?subject=Compliance-Ready%20Bundle">Compliance-Ready Bundle</a>
+        <a class="vciso-bundle-chip" href="mailto:egDevOps@gmail.com?subject=Startup%20Foundation%20Bundle">Startup Foundation Bundle</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Contextual testimonial band — bridges services delivered → products being built -->
+<div class="testimonial-band">
+  <div class="testimonial-band-inner">
+    <div class="testimonial-card">
+      <div class="testimonial-quote">He doesn't just implement tasks; he designs robust, scalable, and secure infrastructure solutions that become the bedrock of our applications.</div>
+      <div class="testimonial-attribution"><strong>A.&#160;P.</strong> &middot; Solutions Architect, fintech</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-quote">Highly skilled and reliable professional whose expertise in automation and infrastructure was instrumental to our team's success.</div>
+      <div class="testimonial-attribution"><strong>A.&#160;V.</strong> &middot; InfoSec Architect, fintech</div>
+    </div>
+  </div>
+  <div class="testimonial-band-footnote">Quoted with permission from public LinkedIn recommendations &middot; full names available on request</div>
+</div>
+
+<!-- PRODUCTS -->
+<div id="products">
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Products in the field and on the <em>roadmap</em></h2>
+  </div>
+  <div class="products-grid">
+
+    <!-- 1. K8s Compliance Operator -->
+    <div class="product-card">
+      <div class="product-readiness">Coming Q3 2026</div>
+      <div class="service-icon">Operator &middot; K8s</div>
+      <h3 class="service-name">K8s Compliance Operator</h3>
+      <div class="product-audience">For platform &amp; SRE teams</div>
+      <div class="service-desc">One Helm chart, one profile flag &mdash; PCI, SOC&nbsp;2, or NIST-ready cluster in minutes.</div>
+      {{ partial "demos/k8s-operator.html" . }}
+      <ul class="service-features">
+        <li>30+ Kyverno ClusterPolicies, profile-selectable</li>
+        <li>Calico default-deny + Falco runtime detection</li>
+        <li>Policy Reporter compliance dashboard</li>
+      </ul>
+      <div class="product-tier-row">
+        <span class="tier">OSS &middot; free</span>
+        <span class="tier">Pro &middot; $99&ndash;500/mo</span>
+        <span class="tier tier-accent">Enterprise &middot; $3K/mo</span>
+      </div>
+      <a class="product-cta" href="mailto:egDevOps@gmail.com?subject=K8s%20Compliance%20Operator%20%E2%80%94%20pilot%20waitlist">Join the pilot waitlist &rarr;</a>
+    </div>
+
+    <!-- 2. DORA Incident Classification Platform -->
+    <div class="product-card">
+      <div class="product-readiness">Coming Q3 2026</div>
+      <div class="service-icon">Platform &middot; DORA</div>
+      <h3 class="service-name">DORA Incident Classification Platform</h3>
+      <div class="product-audience">For EU financial entities under DORA</div>
+      <div class="service-desc">Cuts DORA major-incident classification from 60 minutes to 4 &mdash; EBA-template ready.</div>
+      {{ partial "demos/dora-incident.html" . }}
+      <ul class="service-features">
+        <li>Auto-classification against 6 DORA major-incident criteria</li>
+        <li>Initial &middot; Intermediate &middot; Final report templates</li>
+        <li>NCA portal submission queue with human approval</li>
+      </ul>
+      <div class="product-tier-row">
+        <span class="tier">SaaS &middot; $2&ndash;10K/mo</span>
+        <span class="tier">License &middot; $50&ndash;150K</span>
+        <span class="tier tier-accent">Managed &middot; $15K/mo</span>
+      </div>
+      <a class="product-cta" href="mailto:egDevOps@gmail.com?subject=DORA%20Incident%20Platform%20%E2%80%94%20pilot%20waitlist">Join the pilot waitlist &rarr;</a>
+    </div>
+
+    <!-- 3. Agentic AI Governance Toolkit -->
+    <div class="product-card">
+      <div class="product-readiness">Coming Q3 2026</div>
+      <div class="service-icon">Toolkit &middot; AI</div>
+      <h3 class="service-name">Agentic AI Governance Toolkit</h3>
+      <div class="product-audience">For AI/ML platform owners</div>
+      <div class="service-desc">Declarative agent policies &mdash; tool authorization, human-in-loop, OSCAL audit trail by default.</div>
+      {{ partial "demos/agentic-ai.html" . }}
+      <ul class="service-features">
+        <li>YAML <code>AgentPolicy</code> with tool allowlists + denylists</li>
+        <li>MCP-compatible action logger (Article 12 / Singapore MGF)</li>
+        <li>OSCAL Assessment Results export for compliance evidence</li>
+      </ul>
+      <div class="product-tier-row">
+        <span class="tier">OSS core</span>
+        <span class="tier">Pro &middot; $300/mo</span>
+        <span class="tier tier-accent">Enterprise &middot; $2K/mo</span>
+      </div>
+      <a class="product-cta" href="mailto:egDevOps@gmail.com?subject=Agentic%20AI%20Governance%20Toolkit%20%E2%80%94%20pilot%20waitlist">Join the pilot waitlist &rarr;</a>
+    </div>
+
+    <!-- 4. EU AI Act Documentation Generator -->
+    <div class="product-card">
+      <div class="product-readiness">Coming Q4 2026</div>
+      <div class="service-icon">CLI &middot; AI Act</div>
+      <h3 class="service-name">EU AI Act Documentation Generator</h3>
+      <div class="product-audience">For high-risk AI vendors</div>
+      <div class="service-desc">Generate Annex IV docs from your model artifacts, in CI, every release.</div>
+      {{ partial "demos/ai-act-docs.html" . }}
+      <ul class="service-features">
+        <li>Annex IV technical documentation (6 sections)</li>
+        <li>Risk classification engine (Article 5 / Annex III)</li>
+        <li>GitLab CI / GitHub Actions integration</li>
+      </ul>
+      <div class="product-tier-row">
+        <span class="tier">Dev &middot; $99/mo</span>
+        <span class="tier">Team &middot; $499/mo</span>
+        <span class="tier tier-accent">Enterprise &middot; $2K/mo</span>
+      </div>
+      <a class="product-cta" href="mailto:egDevOps@gmail.com?subject=EU%20AI%20Act%20Doc%20Generator%20%E2%80%94%20notify%20me">Get notified at launch &rarr;</a>
+    </div>
+
+    <!-- 5. Multi-Framework Evidence Graph -->
+    <div class="product-card">
+      <div class="product-readiness">Coming Q4 2026</div>
+      <div class="service-icon">Graph &middot; OSCAL</div>
+      <h3 class="service-name">Multi-Framework Evidence Graph</h3>
+      <div class="product-audience">For GRC &amp; audit teams</div>
+      <div class="service-desc">Collect evidence once &mdash; auto-map to SOC&nbsp;2, PCI, ISO, DORA, NIS2.</div>
+      {{ partial "demos/evidence-graph.html" . }}
+      <ul class="service-features">
+        <li>OSCAL-native evidence records with control mappings</li>
+        <li>Continuous collection from cloud APIs (Okta, AWS, K8s)</li>
+        <li>One artifact satisfies up to 5 frameworks</li>
+      </ul>
+      <div class="product-tier-row">
+        <span class="tier">Starter &middot; $1K/mo</span>
+        <span class="tier">Growth &middot; $3K/mo</span>
+        <span class="tier tier-accent">Enterprise &middot; $8K/mo</span>
+      </div>
+      <a class="product-cta" href="mailto:egDevOps@gmail.com?subject=Multi-Framework%20Evidence%20Graph%20%E2%80%94%20notify%20me">Get notified at launch &rarr;</a>
+    </div>
+
+    <!-- 6. Air-Gapped Compliance Platform -->
+    <div class="product-card">
+      <div class="product-readiness">Enterprise &middot; contact</div>
+      <div class="service-icon">Bundle &middot; Air-Gap</div>
+      <h3 class="service-name">Air-Gapped Compliance Platform</h3>
+      <div class="product-audience">For defense, healthcare, OT, isolated networks</div>
+      <div class="service-desc">Full GRC stack on a tarball &mdash; zero outbound calls, regulator-ready.</div>
+      {{ partial "demos/airgap.html" . }}
+      <ul class="service-features">
+        <li>350+ pre-mirrored container images, signed and SBOMed</li>
+        <li>Offline Trivy + CVE + CIS benchmarks bundled</li>
+        <li>Single-script installer with profile selection</li>
+      </ul>
+      <div class="product-tier-row">
+        <span class="tier">License &middot; $150K&ndash;$500K perpetual</span>
+        <span class="tier">Support &middot; 20% annual</span>
+        <span class="tier tier-accent">Pro services &middot; $2K/day</span>
+      </div>
+      <a class="product-cta" href="mailto:egDevOps@gmail.com?subject=Air-Gapped%20Compliance%20Platform%20%E2%80%94%20briefing">Schedule briefing &rarr;</a>
+    </div>
+
+  </div>
+
+  <!-- Roadmap strip: 5 blue-ocean ideas (use ALL products goal) -->
+  <div class="roadmap-strip">
+    <span class="roadmap-label">On the roadmap &mdash; talk to me if interested:</span>
+    <a class="roadmap-chip" href="mailto:egDevOps@gmail.com?subject=Cross-Border%20Data%20Residency%20Automation">Cross-Border Data Residency</a>
+    <a class="roadmap-chip" href="mailto:egDevOps@gmail.com?subject=DORA%20TPRM%20%28EBA%20format%29">DORA TPRM (EBA)</a>
+    <a class="roadmap-chip" href="mailto:egDevOps@gmail.com?subject=NIS2%20Incident%20Reporter">NIS2 Incident Reporter</a>
+    <a class="roadmap-chip" href="mailto:egDevOps@gmail.com?subject=Developer-tier%20AI%20Governance">Developer-tier AI Governance</a>
+    <a class="roadmap-chip" href="mailto:egDevOps@gmail.com?subject=Living%20SBOM%20with%20CRA%20mapping">Living SBOM + CRA</a>
+  </div>
+  <div class="roadmap-cta">
+    <a href="mailto:egDevOps@gmail.com?subject=Roadmap%20interest&amp;body=I%27m%20interested%20in%20the%20following%20roadmap%20items%3A%0A-%20Cross-Border%20Data%20Residency%0A-%20DORA%20TPRM%20(EBA)%0A-%20NIS2%20Incident%20Reporter%0A-%20Developer-tier%20AI%20Governance%0A-%20Living%20SBOM%20with%20CRA%20mapping%0A%0A(Edit%20to%20keep%20only%20the%20ones%20you%20care%20about.%20Tell%20me%20what%20you%27d%20use%20it%20for.)" class="product-cta">Tell me what interests you &mdash; one email, edit to taste &rarr;</a>
+  </div>
 </div>
 </div>
 
@@ -733,26 +1885,16 @@
 <div class="results-section">
   <div class="results-inner">
     <div class="section-header">
-      <span class="section-num">02</span>
+      <span class="section-num">03</span>
       <h2 class="section-title">Measurable <em>results</em></h2>
     </div>
     <div class="results-grid">
+      {{ range .Site.Data.metrics.results }}
       <div class="result-item">
-        <div class="result-big"><span>$972K</span></div>
-        <div class="result-text">Annual AWS savings delivered for one client</div>
+        <div class="result-big">{{ with .prefix }}<span>{{ . }}</span>{{ end }}{{ .big }}{{ with .suffix }}<span>{{ . }}</span>{{ end }}</div>
+        <div class="result-text">{{ .text }}</div>
       </div>
-      <div class="result-item">
-        <div class="result-big">60<span>%</span></div>
-        <div class="result-text">PCI DSS scope reduction via tokenisation</div>
-      </div>
-      <div class="result-item">
-        <div class="result-big">127<span>h</span></div>
-        <div class="result-text">Analyst hours saved per week via SOAR automation</div>
-      </div>
-      <div class="result-item">
-        <div class="result-big"><span>&lt;</span>15<span>m</span></div>
-        <div class="result-text">Mean time to detection across all environments</div>
-      </div>
+      {{ end }}
     </div>
   </div>
 </div>
@@ -762,14 +1904,14 @@
 <div id="about">
 <div class="who-section">
   <div class="section-header">
-    <span class="section-num">03</span>
-    <h2 class="section-title">Who I <em>am</em></h2>
+    <span class="section-num">04</span>
+    <h2 class="section-title">Why one person, <em>not a consultancy</em></h2>
   </div>
   <div class="who-grid">
     <div class="who-text">
       <p>I'm a <strong>Senior Cloud Security Architect and DevSecOps leader</strong> with 15+ years of hands-on experience &mdash; from self-taught sysadmin to CISO-level advisor at a PCI DSS Level 1 payment processor handling 1M+ daily transactions.</p>
-      <p>I don't write specs for others to implement. <strong>I build the things myself</strong> &mdash; 99 AWS Terraform modules, 500+ Wazuh detection rules, 80+ SOAR workflows, 45 production Helm charts. Every control is tested in production, not on paper.</p>
-      <p>My background is unusual: BIM coordinator for a 260,000m&sup2; Gazprom complex, then fintech DevOps, then Cloud Security Architect. That breadth means I see problems most specialists miss &mdash; and I communicate clearly with both CTOs and QSAs.</p>
+      <p>I don't write specs for others to implement. <strong>I build the things myself</strong> &mdash; 150+ Terragrunt/OpenTofu modules, 500+ Wazuh detection rules, 80+ SOAR workflows, 40+ production Helm charts. Every control is tested in production, not on paper.</p>
+      <p>My background is unusual: BIM coordinator for a 260,000m&sup2; industrial complex, then fintech DevOps, then Cloud Security Architect. That breadth means I see problems most specialists miss &mdash; and I communicate clearly with both CTOs and QSAs.</p>
       <p><strong>Based in Israel. Available globally, remote.</strong></p>
     </div>
     <ul class="who-checklist">
@@ -783,6 +1925,25 @@
       <li><span class="who-check">&#10003;</span> Local LLM inference for security analysis (RTX 5090, DeepSeek R1)</li>
     </ul>
   </div>
+
+  <!-- Architecture Decisions strip — opinionated, defensible tradeoffs with rationale -->
+  <div class="arch-decisions">
+    <div class="arch-decisions-label">How I think &mdash; three decisions, three reasons</div>
+    <div class="arch-decisions-grid">
+      <div class="arch-decision">
+        <div class="arch-decision-title">OpenTofu over <em>Terraform</em></div>
+        <div class="arch-decision-body">BSL license risk is unacceptable in a regulated PCI environment. Migrated 1,000+ resources with zero state disruption. Same HCL, no vendor lock-in.</div>
+      </div>
+      <div class="arch-decision">
+        <div class="arch-decision-title">Dual-SIEM over <em>single commercial SIEM</em></div>
+        <div class="arch-decision-body">Wazuh (host) + Security Onion (network/NDR) eliminates the blind spot a single product creates. $0 licensing, 500+ custom rules, MITRE ATT&amp;CK mapped, every alert cross-correlated.</div>
+      </div>
+      <div class="arch-decision">
+        <div class="arch-decision-title">Teleport JIT over <em>permanent bastion hosts</em></div>
+        <div class="arch-decision-body">Zero standing privileges. Time-bounded sessions, certificate-based auth, full audit trail. 85% reduction in standing CDE access &mdash; auditors love it.</div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 
@@ -790,12 +1951,12 @@
 <div class="stack-section">
   <div class="stack-inner">
     <div class="section-header">
-      <span class="section-num">04</span>
+      <span class="section-num">05</span>
       <h2 class="section-title">Tech <em>stack</em></h2>
     </div>
     <div class="stack-tags">
       <span class="tag">AWS</span>
-      <span class="tag">Yandex Cloud</span>
+      <span class="tag">Multi-cloud (incl. CIS)</span>
       <span class="tag">GCP</span>
       <span class="tag">EKS</span>
       <span class="tag">Terraform / OpenTofu</span>
@@ -832,6 +1993,38 @@
   </div>
 </div>
 
+<!-- FAQ — addresses last objections before the close. Backed by FAQPage JSON-LD in head. -->
+<div id="faq">
+<div class="faq-section">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Common <em>questions</em></h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>What is DORA and when does it apply?</summary>
+      <div class="faq-answer">DORA (Digital Operational Resilience Act) is EU Regulation 2022/2554 covering ICT risk management for financial entities &mdash; banks, insurers, payment institutions, crypto-asset service providers, and their critical ICT third parties. Compliance applies from 17 January 2025; enforcement and major-incident reporting are now active across the EU.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Who needs PCI DSS Level 1?</summary>
+      <div class="faq-answer">Any organisation processing more than 6 million card transactions per brand per year, or any entity Visa or Mastercard explicitly designates as Level 1. Service providers handling cardholder data on behalf of merchants typically default to Level 1 regardless of volume. Annual on-site QSA audit plus quarterly ASV scans are required.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What is a vCISO?</summary>
+      <div class="faq-answer">A virtual or fractional CISO &mdash; embedded security leadership without the full-time hire. Typical engagement: 20-40 hours per month covering board reporting, regulator liaison (QSA / NIS2 CSIRT), incident response, vendor risk reviews, and security architecture reviews. For Series-B fintechs and 50&ndash;500-employee regulated firms it is the standard alternative to a $300K/year CISO hire.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What is NIS2?</summary>
+      <div class="faq-answer">NIS2 (Directive (EU) 2022/2555) extends EU cybersecurity obligations to roughly 160,000 entities across 18 sectors &mdash; energy, transport, healthcare, digital infrastructure, manufacturing, public administration, and more. National transposition deadline was 17 October 2024; member states are now actively enforcing. Major obligations include risk-management measures, 24-hour early-warning and 72-hour notification on significant incidents, and management-body accountability.</div>
+    </details>
+    <details class="faq-item">
+      <summary>When does the EU AI Act enter into force?</summary>
+      <div class="faq-answer">The EU AI Act entered into force 1 August 2024. Prohibited practices applied from 2 February 2025. General-purpose AI obligations apply from 2 August 2025. High-risk system obligations (Annex III, Article 6) and most conformity-assessment requirements apply from 2 August 2026. Annex IV technical documentation for high-risk systems is in scope from August 2026.</div>
+    </details>
+  </div>
+</div>
+</div>
+
 <!-- CTA -->
 <div id="contact">
 <div class="cta-section">
@@ -839,7 +2032,8 @@
     Ready to build security<br>that <em>actually works?</em>
   </h2>
   <p class="cta-sub">
-    Free 30-minute call. No pitch, no sales deck &mdash; just an honest conversation about your security posture and where to start.
+    Free 30-minute scoping call. No pitch, no sales deck &mdash; just an honest conversation about your security posture and where to start.<br>
+    I respond within 24h, EU / CIS / GCC time zones.
   </p>
   <div class="cta-options">
     <a href="mailto:egDevOps@gmail.com" class="btn-primary" style="font-size:1rem; padding: 1.1rem 2.5rem;">

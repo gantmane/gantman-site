@@ -1,0 +1,26 @@
+<figure class="ui-shot ui-shot-term" aria-label="agent-policy.yaml editor view">
+  <div class="ui-shot-bar">
+    <span class="ui-shot-dots"><i></i><i></i><i></i></span>
+    <span class="ui-shot-title">agent-policy.yaml &mdash; kubectl edit</span>
+    <span class="ui-shot-tag">yaml</span>
+  </div>
+  <div class="ui-shot-body">
+    <div class="demo-frame demo-yaml"><pre class="demo-yaml-code"><span class="yc"># agent-policy.yaml &middot; production-grade governance</span>
+<span class="yk">apiVersion</span>: ai.governance/v1
+<span class="yk">kind</span>: AgentPolicy
+<span class="yk">metadata</span>:
+  <span class="yk">name</span>: <span class="ys">production-agent</span>
+<span class="yk">spec</span>:
+  <span class="yk">toolAuthorization</span>:
+    <span class="yk">allowed</span>:
+      - <span class="yk">tool</span>: <span class="ys">database_query</span>
+        <span class="yk">scope</span>: <span class="ys">read-only</span>
+        <span class="yk">approval</span>: <span class="ys">auto</span>
+    <span class="yk">denied</span>: [<span class="ys">filesystem_write</span>, <span class="ys">code_execution</span>]
+  <span class="yk">humanOversight</span>:
+    - <span class="yk">trigger</span>: <span class="ys">confidence &lt; 0.8</span>
+      <span class="yk">action</span>: <span class="ys">require_approval</span>
+  <span class="yk">audit</span>: { <span class="yk">format</span>: <span class="ys">oscal</span>, <span class="yk">retention</span>: <span class="ys">180d</span> }</pre></div>
+  </div>
+  <figcaption class="ui-shot-caption">Concept preview &middot; CRD shape representative</figcaption>
+</figure>

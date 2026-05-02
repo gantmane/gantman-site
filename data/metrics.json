@@ -1,29 +1,16 @@
 {
-  "metrics": [
-    {
-      "icon": "✅",
-      "text": "PCI DSS Level 1 - Zero Audit Findings",
-      "description": "Achieved compliance with no findings"
-    },
-    {
-      "icon": "⚡",
-      "text": "99.95% Uptime - Payment Processing",
-      "description": "High availability for critical systems"
-    },
-    {
-      "icon": "📉",
-      "text": "85% Security Incident Reduction",
-      "description": "Through SIEM deployment and monitoring"
-    },
-    {
-      "icon": "💰",
-      "text": "45% AWS Cost Optimization",
-      "description": "FinOps practices implementation"
-    },
-    {
-      "icon": "🎯",
-      "text": "60% CDE Scope Reduction",
-      "description": "Via tokenization and segmentation"
-    }
+  "_comment": "Source-of-truth for proof-bar chips and results-grid tiles. Numbers rounded to non-confidential approximations per the commercial-vendor positioning. Edit here, not in index.html.",
+  "proof": [
+    {"strong": "PCI DSS 4.0 Level 1", "label": "Zero findings"},
+    {"strong": "~$900K/yr", "label": "AWS cost reductions"},
+    {"strong": "40+ Helm · 40+ CI · 150+ IaC", "label": ""},
+    {"strong": "DORA · NIS2 · AI Act · GDPR · PCI", "label": ""},
+    {"strong": "15 min", "label": "MTTD"}
+  ],
+  "results": [
+    {"prefix": "~$900K", "big": "", "suffix": "", "text": "Annual AWS cost reductions delivered"},
+    {"prefix": "", "big": "60", "suffix": "%", "text": "PCI DSS scope reduction via tokenisation"},
+    {"prefix": "", "big": "127", "suffix": "h", "text": "Analyst hours saved per week via SOAR automation"},
+    {"prefix": "<", "big": "15", "suffix": "m", "text": "Mean time to detection across all environments"}
   ]
 }

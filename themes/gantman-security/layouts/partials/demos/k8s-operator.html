@@ -1,0 +1,20 @@
+<figure class="ui-shot ui-shot-term" aria-label="compliance-operator-cli terminal preview">
+  <div class="ui-shot-bar">
+    <span class="ui-shot-dots"><i></i><i></i><i></i></span>
+    <span class="ui-shot-title">compliance-operator-cli &mdash; security@prod-cluster-01</span>
+    <span class="ui-shot-tag">zsh</span>
+  </div>
+  <div class="ui-shot-body">
+    <div class="demo-frame demo-k8s">
+      <div class="demo-k8s-line"><span class="demo-prompt">$</span> helm install compliance-operator . \</div>
+      <div class="demo-k8s-line">    --namespace security --set profile=pci-dss-4.0</div>
+      <div class="demo-k8s-line demo-k8s-line-out">NAME: compliance-operator &middot; STATUS: deployed</div>
+      <div class="demo-k8s-line demo-k8s-line-success">&#x2713; 30 Kyverno ClusterPolicies loaded (PCI DSS 4.0)</div>
+      <div class="demo-k8s-line demo-k8s-line-success">&#x2713; Calico default-deny network policies applied</div>
+      <div class="demo-k8s-line demo-k8s-line-success">&#x2713; Falco runtime detection rules active</div>
+      <div class="demo-k8s-line demo-k8s-line-success">&#x2713; Policy Reporter dashboard exposed</div>
+      <div class="demo-k8s-line demo-k8s-line-comment"># cluster prod-cluster-01 &middot; ready in 47s</div>
+    </div>
+  </div>
+  <figcaption class="ui-shot-caption">Concept preview &middot; CLI scaffold not yet released</figcaption>
+</figure>

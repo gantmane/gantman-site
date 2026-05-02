@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      .bg { fill: #0a0a0a; }
+      .accent-line { stroke: #c8441a; stroke-width: 2; }
+      .tag { font-family: 'DM Mono', monospace; font-size: 18px; fill: #c8441a; letter-spacing: 4px; }
+      .h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: 90px; fill: #f5f2ed; line-height: 1; }
+      .h1-em { fill: #c8441a; font-style: italic; }
+      .sub { font-family: 'DM Sans', sans-serif; font-size: 28px; fill: rgba(245,242,237,0.75); }
+      .url { font-family: 'DM Mono', monospace; font-size: 22px; fill: rgba(245,242,237,0.55); letter-spacing: 2px; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="630"/>
+  <line class="accent-line" x1="100" y1="120" x2="180" y2="120"/>
+  <text class="tag" x="200" y="127">CLOUD SECURITY ARCHITECT</text>
+  <text class="h1" x="100" y="260">Zero breaches.</text>
+  <text class="h1" x="100" y="360">Zero audit <tspan class="h1-em">findings.</tspan></text>
+  <text class="sub" x="100" y="450">PCI DSS 4.0 &#183; DORA &#183; NIS2 &#183; EU AI Act &#183; 152-FZ</text>
+  <text class="sub" x="100" y="490">1M+ daily transactions secured</text>
+  <text class="url" x="100" y="570">GANTMAN.BIZ</text>
+</svg>

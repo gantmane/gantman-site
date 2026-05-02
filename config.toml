@@ -1,24 +1,24 @@
 baseURL = "https://gantman.biz/"
 languageCode = "en-us"
-title = "Evgeniy Gantman - Senior Cloud Security Architect & DevSecOps Leader"
+title = "Evgeniy Gantman — Cloud Security Architect · PCI · DORA · NIS2"
 theme = "gantman-security"
 
 [params]
   author = "Evgeniy Gantman"
-  description = "15+ Years of Cloud Security, PCI DSS Compliance, and DevSecOps Expertise"
-  keywords = "PCI DSS, AWS Security, Kubernetes Security, DevSecOps, Cloud Security Architect"
-  
+  description = "Cloud security architect & vCISO for EU, CIS, and GCC. PCI DSS 4.0, DORA, NIS2, AI Act, 152-FZ. Zero breaches, zero audit findings. 1M+ daily transactions."
+  keywords = "DORA compliance, NIS2 readiness, EU AI Act, vCISO Europe, PCI DSS 4.0, AWS security architect, AI SOC automation, Terraform security modules"
+
   # Contact Information
   whatsapp = "+972553189185"
   telegram = "@tachys"
   email = "egDevOps@gmail.com"
   linkedin = "https://linkedin.com/in/evgeniy-gantman"
   github = "https://github.com/gantmane"
-  
-  # Hero Section
+
+  # Hero Section (note: index.html currently hardcodes hero copy; these params kept consistent for any future head/baseof partial)
   heroTitle = "Evgeniy Gantman"
-  heroSubtitle = "Senior Cloud Security Architect & DevSecOps Leader"
-  heroText = "15+ Years | PCI DSS 4.0 Expert | AWS Security | Zero Trust Architecture"
+  heroSubtitle = "Cloud Security Architect · DevSecOps · EU + CIS regulated-sector compliance"
+  heroText = "Two production platforms in the field, four shipping in 2026. Working code, not just architecture decks."
   
   # Colors
   primaryColor = "#1a365d"
@@ -28,33 +28,25 @@ theme = "gantman-security"
 
 [menu]
   [[menu.main]]
-    name = "Home"
-    url = "/"
+    name = "Services"
+    url = "/#services"
     weight = 1
   [[menu.main]]
-    name = "About"
-    url = "/about/"
+    name = "Products"
+    url = "/#products"
     weight = 2
   [[menu.main]]
-    name = "Journey"
-    url = "/journey/"
+    name = "Results"
+    url = "/#results"
     weight = 3
   [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
+    name = "About"
+    url = "/#about"
     weight = 4
   [[menu.main]]
-    name = "Skills"
-    url = "/skills/"
-    weight = 5
-  [[menu.main]]
-    name = "Blog"
-    url = "/blog/"
-    weight = 6
-  [[menu.main]]
     name = "Contact"
-    url = "/contact/"
-    weight = 7
+    url = "/#contact"
+    weight = 5
 
 [taxonomies]
   category = "categories"
