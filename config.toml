@@ -1,12 +1,12 @@
 baseURL = "https://gantman.biz/"
 languageCode = "en-us"
-title = "Evgeniy Gantman — Cloud Security Architect · PCI · DORA · NIS2"
+title = "GantmanBiz — AI-First Software Company · Products That Ship"
 theme = "gantman-security"
 
 [params]
   author = "Evgeniy Gantman"
-  description = "Cloud security architect & vCISO for EU, CIS, and GCC. PCI DSS 4.0, DORA, NIS2, AI Act, 152-FZ. Zero breaches, zero audit findings. 1M+ daily transactions."
-  keywords = "DORA compliance, NIS2 readiness, EU AI Act, vCISO Europe, PCI DSS 4.0, AWS security architect, AI SOC automation, Terraform security modules"
+  description = "AI-first software company building production apps across fintech, real estate, e-commerce, and AI infrastructure. 10+ products shipping, all powered by local LLMs (Ollama) with zero cloud API costs."
+  keywords = "AI software company, local LLM, Ollama, real estate platform, trading platform, Wildberries seller tools, DevSecOps, full-stack developer, security architect, FastAPI, React, Kubernetes"
 
   # Contact Information
   whatsapp = "+972553189185"
@@ -15,10 +15,10 @@ theme = "gantman-security"
   linkedin = "https://linkedin.com/in/evgeniy-gantman"
   github = "https://github.com/gantmane"
 
-  # Hero Section (note: index.html currently hardcodes hero copy; these params kept consistent for any future head/baseof partial)
-  heroTitle = "Evgeniy Gantman"
-  heroSubtitle = "Cloud Security Architect · DevSecOps · EU + CIS regulated-sector compliance"
-  heroText = "Two production platforms in the field, four shipping in 2026. Working code, not just architecture decks."
+  # Hero Section
+  heroTitle = "GantmanBiz"
+  heroSubtitle = "AI-First Software Company · Building Products That Ship"
+  heroText = "10+ production apps across fintech, real estate, e-commerce, and AI infrastructure. All powered by local LLMs with zero cloud API costs."
   
   # Colors
   primaryColor = "#1a365d"
